@@ -34,9 +34,9 @@ def predict_disease():
     info = df[df['disease'] == prediction].iloc[0]
 
     return jsonify({
-        " Predicted Disease": prediction,
-        " Precautions": info['precautions'],
-        " Doctor Type": info['specialist']
+        "Predicted Disease": prediction,
+        "Precautions": info['precautions'],
+        "Doctor Type": info['specialist']
     })
 
 if __name__ == '__main__':
