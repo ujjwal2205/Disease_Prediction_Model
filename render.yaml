@@ -1,14 +1,10 @@
 services:
   - type: web
-    name: disease-prediction-flask
+    name: disease-prediction-api
     env: python
-    buildCommand: pip install -r requirements.txt
+    plan: free
+    buildCommand: ""
     startCommand: python app.py
-    rootDir: .  # Root for Flask
-
-  - type: web
-    name: disease-prediction-backend
-    env: node
-    buildCommand: cd backend && npm install
-    startCommand: cd backend && npm run server
-    rootDir: backend  # Node backend folder
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10
