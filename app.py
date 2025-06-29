@@ -12,6 +12,11 @@ mlb = joblib.load("model/mlb.pkl")
 df = pd.read_excel("cleaned_combined_disease_data (1) (1).xlsx")
 df['precautions'] = df['precautions'].apply(lambda x: x.split(';') if isinstance(x, str) else x)
 
+# ✅ Uptime check route
+@app.route('/', methods=['GET'])
+def home():
+    return jsonify({"message": "✅ Disease Prediction API is live!"})
+
 @app.route('/predict', methods=['POST'])
 def predict_disease():
     data = request.get_json()
