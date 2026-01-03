@@ -1,11 +1,11 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify,CORS
 import pandas as pd
 import joblib
 from sklearn.preprocessing import MultiLabelBinarizer
 import os
 
 app = Flask(__name__)
-
+CORS(app)
 model = None
 mlb = None
 df = None
